@@ -1,0 +1,18 @@
+<div class="container">
+    <div *ngIf="!taskId">
+        <p class="alert alert-danger">
+            Cant mathch id
+        </p>
+    </div>
+</div>
+{{task?.title}}
+
+<div class="container">
+    <div *ngIf="taskId">
+        <input type="text" class="form-control" placeholder="Task Title" [(ngModel)]="task.title">
+        <textarea class="form-control" placeholder="Task Descrption" [(ngModel)]="task.description"></textarea>
+        <button class="btn btn-primary" (click)="savetask()">Save</button>
+        <button class="btn btn-danger" (click)="deletetask()">Delete</button>
+        <a class="btn btn-danger" routerLink="/">Cancel</a>
+    </div>
+</div>
